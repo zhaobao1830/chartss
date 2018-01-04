@@ -1,0 +1,285 @@
+body{
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  background-color: #eee;
+}
+a{
+  color: #222;
+  text-decoration: none;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  list-style:none;
+}
+
+.LDpage{
+  position: relative;
+  min-width: 1200px;
+}
+.LDheader {
+  background-color: #295997;
+  height:60px;
+  padding: 20px 0;
+  overflow: hidden;
+}
+.LDheader .LDHeaderC{
+  margin:0 auto;
+  width:1200px;
+  overflow: hidden;
+}
+.LDheader .LDHeaderC .leaderLogo{
+  float: left;
+}
+.LDheader .leaderLogin{
+  line-height: 60px;
+  float: right;
+}
+.LDheader .leaderLogin a{
+  color: #57b7e7;
+  font-size: 18px;
+}
+.LDpage .LDcont{
+  padding-top: 20px;
+  background-color: #eee;
+}
+.LDcont .projectC{
+  width:1200px;
+  margin: 0 auto;
+}
+.projectC .title{
+  height: 40px;
+  background-color: #b8bcc6;
+}
+.projectC .title .leftT{
+  width: 112px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  background-color: #2e7ebb;
+  float: left;
+}
+.projectC .year{
+  height: 40px;
+  float: right;
+  position: relative;
+}
+.projectC .year select{
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  width: 75px;
+  padding: 0 25px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  box-sizing:content-box;
+  background-color: white;
+  outline: none;
+  border: 1px #b8bcc6 solid;
+  border-bottom: none;
+  /*
+  background-color: #b8bcc6;
+  background: url(http://static.crecgec.com/leader/selectDown.png) 86px center no-repeat;
+  */
+}
+.projectC .year select:focus{
+  background-color: white;
+}
+.projectC .year .yearList{
+  line-height: 26px;
+  border: none;
+  width: 85px;
+  padding-right: 35px;
+  text-align: center;
+  border: 1px #b8bcc6 solid;
+  border-top: none;
+  position: absolute;
+  top: 58px;
+  left: 0px;
+  z-index: 999;
+  cursor: pointer;
+  background-color: white;
+}
+.projectC .year.yearSelected select{
+  background-color: white;
+  border: 1px #b8bcc6 solid;
+  border-bottom: none;
+  /*
+  background:white url(http://static.crecgec.com/leader/selectUp.png) 86px center no-repeat;
+  */
+  background-color: white;
+}
+.projectC .chartsArea{
+  position: relative;
+  background-color: #fff;
+}
+.projectC .chartsArea .areaMeng{
+  width: 1200px;
+  height: 800px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  display: none;
+}
+#china-map {width:1198px; height: 798px;margin: auto;border:1px #77afea solid;}
+.LDpage .meng{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(0,0,0,.5);
+}
+.LDpage .meng .mengCont{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -621px;
+  margin-top: -305px;
+  background-color: white;
+  overflow: hidden;
+}
+.LDpage .meng .mengTitle{
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-size: 18px;
+  padding-left: 20px;
+  background-color: #0169b7;
+}
+.LDpage .meng .mengC{
+  width: 1200px;
+  height: 610px;
+  padding: 20px;
+  border: 1px #77afea solid;
+}
+.LDpage .mengC table{
+  width: 1183px;
+  text-align: center;
+  border-collapse:collapse;
+}
+.LDpage .mengC thead{
+  height: 48px;
+  line-height: 48px;
+  background-color: #777;
+  color: white;
+}
+.LDpage .mengC .listTab thead td{
+  border: 1px #bbb solid;
+  margin: 0px;
+  background-color: #777;
+}
+.LDpage .mengC .listTab tbody td{
+  font-size: 14px;
+  line-height: 22px;
+}
+.LDpage .mengC .tableList{
+  overflow: hidden;
+  position: relative;
+}
+.LDpage .mengC .tabouter{
+  height: 410px;
+  border-bottom: 1px solid #CAD3DA;
+  overflow: auto;
+}
+.LDpage .tableList tr {
+  overflow: hidden;
+  /*
+  display: block;
+  */
+}
+.LDpage .tableList td {
+  overflow: hidden;
+  padding: 10px 0px;
+  font-size: 14px;
+  /*
+  display: inline-block;
+  */
+}
+/*
+.LDpage .jhTable tr td:nth-of-type(1), .LDpage .jhTable tr td:nth-of-type(2), .LDpage .jhTable tr td:nth-of-type(3) {
+    width: 80px;
+}
+.LDpage .jhTable tr td:nth-of-type(4) {
+    width: 210px;
+}
+.LDpage .jhTable tr td:nth-of-type(5) {
+    width: 210px;
+}
+.LDpage .jhTable tr td:nth-of-type(6) {
+    width: 120px;
+}
+.LDpage .jhTable tr td:nth-of-type(7) {
+    width: 160px;
+}
+.LDpage .jhTable tr td:nth-of-type(8) {
+    width: 160px;
+}
+.LDpage .jhTable tr td:nth-of-type(9) {
+    width: 82px;
+}
+*/
+
+
+.LDpage .mengC .tableList .loading{
+  left: 0px;
+  top: 0px;
+  width: 1200px;
+  height: 450px;
+  text-align: center;
+  line-height: 450px;
+  z-index: 99;
+  position: absolute;
+  background-color: white;
+}
+.LDpage .mengC .page{
+  overflow: hidden;
+}
+.LDpage .mengC .M-box{
+  margin-top: 20px;
+  float: right;
+}
+.LDpage .mengC tbody{
+  color: #2e2f32;
+}
+.LDpage .close{
+  width: 40px;
+  height: 48px;
+  background: url(http://static.crecgec.com/leader/close.png) center center no-repeat;
+  float: right;
+}
+.meng .classChioce{
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.meng .classChioce a{
+  width:80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  background-color: #777;
+  border-radius: 5px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  color: white;
+  cursor: pointer;
+}
+.meng .classChioce a.daochu{
+  margin-right: 18px;
+  float: right;
+}
+.meng .classChioce a.select{
+  background-color: #0169b7;
+}
+[v-cloak] {
+  display: none;
+}
