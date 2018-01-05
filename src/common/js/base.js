@@ -1,5 +1,6 @@
 import axios from 'axios'
-import $ from 'jquery'
+import jQuery from 'jquery'
+import "common/js/jquery.pagination.js"
 require('es6-promise').polyfill()
 // 获取列表
 /*
@@ -55,7 +56,7 @@ export function getListData (This) {
   })
 }
 // 初始化列表查询值
-function init (This) {
+export function init (This) {
   This.jhListData = []
   This.zbListData = []
   This.jhAllData = []
@@ -70,7 +71,7 @@ function init (This) {
 function setListData (data, listDataName, obj) {
   var totalpage = data.length - 1
   // 初始化分页
-  $('.M-box').pagination({
+  jQuery('.M-box').pagination({
     // pageCount:50,
     totalData: totalpage,
     showData: obj.pageSize,
@@ -135,7 +136,7 @@ export function setMap (This) {
     if (!res.data) {
       console.log('请求出错!')
     }
-    console.log(res)
+
     var mapData = res.data.data
     // 物资
     var MapDataUpright = []

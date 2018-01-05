@@ -49,8 +49,10 @@ ul{
   margin: 0 auto;
 }
 .projectC .title{
-  height: 40px;
-  background-color: #b8bcc6;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px #77afea solid;
+  overflow: hidden;
 }
 .projectC .title .leftT{
   width: 112px;
@@ -60,32 +62,54 @@ ul{
   color: #fff;
   display: block;
   text-align: center;
-  background-color: #2e7ebb;
+  background-color: #bbb;
   float: left;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.projectC .year{
+.projectC .title .leftT.select{
+  background-color: #2e7ebb;
+}
+.projectC .rightT{
   height: 40px;
+  margin-left: 10px;
   float: right;
   position: relative;
 }
-.projectC .year select{
+.projectC .rightT select{
+  width: 126px;
   height: 40px;
   line-height: 40px;
-  border: none;
-  width: 75px;
-  padding: 0 25px;
+  padding-left: 6px
+  //padding: 0 25px;
   font-size: 16px;
   text-align: center;
   cursor: pointer;
-  box-sizing:content-box;
   background-color: white;
   outline: none;
   border: 1px #b8bcc6 solid;
-  border-bottom: none;
   /*
   background-color: #b8bcc6;
   background: url(http://static.crecgec.com/leader/selectDown.png) 86px center no-repeat;
   */
+}
+.projectC .rightT input{
+  width: 160px;
+  text-align: left;
+  padding-left: 5px;
+}
+.projectC .rightT input.subSearch{
+  margin: 0px;
+  padding: 0px;
+  width: 72px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background-color: #e72433;
+  color: white;
+  text-align: center;
+  cursor: pointer;
 }
 .projectC .year select:focus{
   background-color: white;

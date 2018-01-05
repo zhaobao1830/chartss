@@ -10,11 +10,18 @@
         </div>
       </div>
     </div>
+
     <div class="LDcont">
       <div class="projectC">
         <div class="title">
-          <span class='leftT'>项目分布</span>
-          <div class="year" >
+          <span class='leftT select' @click='changeSeries("直报")'>直报项目</span>
+          <span class='leftT' @click='changeSeries("计划")'>计划项目</span>
+
+
+          <div class="rightT" >
+            <input type='button' value="确定" class="subSearch"/>
+          </div>
+          <div class="year rightT" >
             <select @change='changeYear($event)'>
               <option v-for='(val, index) in year' :value="val" >{{val}}年</option>
             </select>
@@ -25,6 +32,22 @@
             <ul class="yearList">
                 <li v-for='(val, index) in year'>{{val}}年</li>
             </ul>
+            -->
+          </div>
+          <div class="compony rightT" >
+            <input type="text" name="compony" placeholder="请输入企业名称">
+            <!--
+                <select >
+                    <option>全部企业</option>
+                </select>
+            -->
+          </div>
+          <div class="classify rightT" >
+            <input type="text" name="compony" placeholder="请输入大类名称">
+            <!--
+                <select >
+                    <option>全部大类</option>
+                </select>
             -->
           </div>
         </div>
@@ -53,6 +76,7 @@
         </div>
       </div>
     </div>
+
     <div class="meng" v-show='mengHide'>
       <div class="mengCont">
         <div class="mengTitle">
@@ -63,9 +87,12 @@
 
         <div class="mengC">
           <div class="classChioce">
-            <a href="javascript:;" @click='selectChioce("")' :class="{select: classifySe == ''}">全部</a>
-            <a href="javascript:;" @click='selectChioce("钢材")' :class="{select: classifySe == 'gc'}">钢材</a>
-            <a href="javascript:;" @click='selectChioce("水泥")' :class="{select: classifySe == 'sn'}">水泥</a>
+            <!--
+                <a href="javascript:;" @click='selectChioce("")' :class="{select: classifySe == ''}">全部</a>
+                <a href="javascript:;" @click='selectChioce("钢材")' :class="{select: classifySe == 'gc'}">钢材</a>
+                <a href="javascript:;" @click='selectChioce("水泥")' :class="{select: classifySe == 'sn'}">水泥</a>
+            -->
+
             <a href="javascript:;" class="select daochu" @click='download()'>导出</a>
           </div>
           <div class="tableList" id="tableList">
@@ -296,8 +323,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {getListData, DownLoadFile, setMap} from 'common/js/base'
-  let echarts = require('echarts/lib/echarts')
+  import {getListData, DownLoadFile, setMap, init} from 'common/js/base'
   import {buildChart} from 'common/js/mychart'
   require('echarts/map/js/china')
 
@@ -484,7 +510,7 @@
         for (var i = 0; i < This.areaData.length; i++ ) {
           if (This.areaData[i].city.includes(city) || This.areaData[i].area === city) {
             This.mengHide = true
-            This.area = this.areaData[i].area
+            This.area = This.areaData[i].area
           }
         }
       })
@@ -499,21 +525,19 @@
         this.classify = "钢材"
         init(this)
       },
-      // 选择分类
-      selectChioce: function (classify) {
-        this.loadingShow = true
-        this.nowpage = 0
-        if (classify === '钢材') {
-          this.classifySe = 'gc'
-          this.classifyly = '盘条","圆钢","建筑钢筋'
-        } else if (classify === '水泥') {
-          this.classifySe = 'sn'
-          this.classifyly = '水泥'
-        } else {
-          this.classifySe = ''
-          this.classifyly = ''
+      // 修改类型
+      changeSeries: function(series){
+        this.loadingShow = true;
+        this.nowpage = 0;
+        if ( series == '计划'){
+          this.seriesName = '计划';
+          this.jhState = true;
         }
-        getListData(this)
+        else if( series == '直报'){
+          this.seriesName = '直报';
+          this.zbState = true;
+        }
+        setMap(this)
       },
       // 选择年
       changeYear: function (event) {
